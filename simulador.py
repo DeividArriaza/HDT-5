@@ -3,8 +3,8 @@ import random
 import numpy as np
 RANDOM_SEED = 25
 CPU_INSTRUCCIONES = 3 #modificable
-NUM_PROCESOS = 25 #Modificable
-interval = 10 #Modificable
+NUM_PROCESOS = 200 #Modificable
+interval = 1 #Modificable
 
 #Donde se generan los procesos aleatoriamente y se siguen hasta que llegue a NUM_PROCESOS
 def proceso(env, ram, cpu, tiempos):
@@ -46,7 +46,7 @@ def ejecucion(env, nombre, ram, cpu, tiempos):
 #Inicialización de la simulación
 env = simpy.Environment()
 RAM = simpy.Container(env, init=100, capacity=100)
-CPU = simpy.Resource(env, capacity=1) #La capacity muestra el número de procesadores
+CPU = simpy.Resource(env, capacity=2) #La capacity muestra el número de procesadores
 tiempos = []
 random.seed(RANDOM_SEED)
 
